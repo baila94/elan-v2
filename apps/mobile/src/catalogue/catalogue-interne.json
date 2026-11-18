@@ -1,0 +1,52 @@
+{
+  "version": "lot1-interne-1",
+  "elements": [
+    { "id": "P1", "type": "pilier", "titre": "Gestion de l'argent", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2", "type": "pilier", "titre": "Entrepreneuriat", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3", "type": "pilier", "titre": "Travail et carrière", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4", "type": "pilier", "titre": "Banque et finance", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P5", "type": "pilier", "titre": "Économie et société", "acces": "compte_requis", "etat": "actif" },
+
+    { "id": "P1-D1", "type": "dimension", "parent": "P1", "titre": "Maîtriser son argent au quotidien", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P1-D2", "type": "dimension", "parent": "P1", "titre": "Construire son avenir financier", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P1-D3", "type": "dimension", "parent": "P1", "titre": "Faire face aux difficultés financières", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P1-D4", "type": "dimension", "parent": "P1", "titre": "Comprendre ses obligations et ses droits financiers", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P1-D5", "type": "dimension", "parent": "P1", "titre": "Développer ses revenus et améliorer sa situation financière", "acces": "compte_requis", "etat": "actif" },
+
+    { "id": "P2-D1", "type": "dimension", "parent": "P2", "titre": "Trouver une idée et identifier une opportunité", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D2", "type": "dimension", "parent": "P2", "titre": "Comprendre son marché et ses clients", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D3", "type": "dimension", "parent": "P2", "titre": "Construire son offre et son modèle économique", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D4", "type": "dimension", "parent": "P2", "titre": "Préparer et lancer son activité", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D5", "type": "dimension", "parent": "P2", "titre": "Trouver ses premiers clients et vendre", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D6", "type": "dimension", "parent": "P2", "titre": "Gérer et piloter son entreprise", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D7", "type": "dimension", "parent": "P2", "titre": "Développer et faire évoluer son activité", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P2-D8", "type": "dimension", "parent": "P2", "titre": "Assurer la pérennité de son entreprise", "acces": "compte_requis", "etat": "actif" },
+
+    { "id": "P3-D1", "type": "dimension", "parent": "P3", "titre": "Se connaître et construire son orientation professionnelle", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D2", "type": "dimension", "parent": "P3", "titre": "Découvrir les métiers, les formes d'emploi et le monde du travail", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D3", "type": "dimension", "parent": "P3", "titre": "Se former et développer ses compétences", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D4", "type": "dimension", "parent": "P3", "titre": "Trouver un emploi et réussir son recrutement", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D5", "type": "dimension", "parent": "P3", "titre": "Comprendre son contrat, ses droits et sa rémunération", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D6", "type": "dimension", "parent": "P3", "titre": "Prévenir et faire face aux difficultés au travail", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D7", "type": "dimension", "parent": "P3", "titre": "S'intégrer, réussir dans son poste et évoluer", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P3-D8", "type": "dimension", "parent": "P3", "titre": "Gérer les transitions et préparer la suite de sa carrière", "acces": "compte_requis", "etat": "actif" },
+
+    { "id": "P4-D1", "type": "dimension", "parent": "P4", "titre": "Comprendre les acteurs financiers et protéger son argent", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D2", "type": "dimension", "parent": "P4", "titre": "Choisir et utiliser ses services bancaires", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D3", "type": "dimension", "parent": "P4", "titre": "Défendre ses droits et faire face aux difficultés bancaires et financières", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D4", "type": "dimension", "parent": "P4", "titre": "Comprendre le crédit et financer ses projets", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D5", "type": "dimension", "parent": "P4", "titre": "Comprendre l'épargne et ses enveloppes de placement", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D6", "type": "dimension", "parent": "P4", "titre": "Comprendre les investissements et les marchés financiers", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D7", "type": "dimension", "parent": "P4", "titre": "Comprendre et choisir ses assurances", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P4-D8", "type": "dimension", "parent": "P4", "titre": "Construire sa méthode de décision financière à long terme", "acces": "compte_requis", "etat": "actif" },
+
+    { "id": "P5-D1", "type": "dimension", "parent": "P5", "titre": "Comprendre l'économie du quotidien", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P5-D2", "type": "dimension", "parent": "P5", "titre": "Comprendre les mécanismes économiques", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P5-D3", "type": "dimension", "parent": "P5", "titre": "Comprendre les finances publiques et les politiques économiques", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P5-D4", "type": "dimension", "parent": "P5", "titre": "Comprendre la société et ses transformations", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P5-D5", "type": "dimension", "parent": "P5", "titre": "Développer son esprit critique et lire les données", "acces": "compte_requis", "etat": "actif" },
+    { "id": "P5-D6", "type": "dimension", "parent": "P5", "titre": "Comprendre les transitions et les enjeux de demain", "acces": "compte_requis", "etat": "actif" },
+
+    { "id": "EP1", "type": "experience", "parent": "P1-D1", "titre": "Construire son premier budget", "acces": "compte_requis", "etat": "actif", "version": "ep1-transcription-1" }
+  ]
+}

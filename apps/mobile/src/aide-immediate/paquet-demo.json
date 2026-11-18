@@ -1,0 +1,23 @@
+{
+  "demo": true,
+  "version": "demo-lot1-1",
+  "avertissement": "DÉMONSTRATION INTERNE — contenu fictif, non vérifié, ne pas utiliser en situation réelle",
+  "contenus": [
+    {
+      "id": "demo-a",
+      "titre": "Exemple de rubrique A (démonstration)",
+      "paragraphes": [
+        "Ce texte est un remplissage de démonstration. Il sert uniquement à vérifier l’affichage de l’aide immédiate dans la version interne.",
+        "Les vrais contenus d’aide immédiate seront rédigés, vérifiés et approuvés par des humains avant toute publication."
+      ]
+    },
+    {
+      "id": "demo-b",
+      "titre": "Exemple de rubrique B (démonstration)",
+      "paragraphes": [
+        "Ce texte est un remplissage de démonstration, sans aucune information utilisable.",
+        "Aucun numéro, aucune adresse et aucune consigne réelle ne figurent dans ce paquet."
+      ]
+    }
+  ]
+}

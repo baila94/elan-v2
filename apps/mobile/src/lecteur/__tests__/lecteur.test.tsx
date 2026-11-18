@@ -132,6 +132,72 @@ describe('Lecteur d’expérience : EP1', () => {
     expect(screen.getByRole('button', { name: 'Valider le plan de novembre' }).props.accessibilityState.disabled).toBe(false);
   });
 
+  test.each([
+    ['1 280 €', '1 280 € : le plus bas de ses quatre derniers revenus', 'Un peu de tout (300 € au coussin, 200 € au projet, 120 € de plaisir)'],
+    ['1 900 €', '1 900 € : le plus haut de ses quatre derniers revenus', null],
+  ])('parcours complet des 13 écrans avec la base %s, jusqu’à « Terminer »', async (_base, libelleBase, choixNovembre) => {
+    const { onQuitter } = await monter();
+    await jusquAEcran4();
+    await appuyer('Valider ce plan');
+    await appuyer('Garder ce plan');
+    await appuyer('Ne rien changer');
+    await appuyer('Continuer');
+    await appuyer('Continuer');
+    await choisir('92,50 €');
+    await appuyer('Valider le plan de novembre');
+    expect(screen.getByText('Ce qu’Amadou a appris')).toBeTruthy();
+    await appuyer('Continuer');
+    expect(screen.getByText('Marc, des revenus qui changent')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Voir le mois suivant' }).props.accessibilityState.disabled).toBe(true);
+    await choisir(libelleBase);
+    await choisir('C’est ce qu’il gagne en moyenne');
+    expect(screen.getByText(/Fin octobre : .* sur son compte\./)).toBeTruthy();
+    await appuyer('Voir le mois suivant');
+    expect(screen.getByText('Novembre : un bon mois')).toBeTruthy();
+    if (choixNovembre) {
+      expect(screen.getByRole('button', { name: 'Voir le mois suivant' }).props.accessibilityState.disabled).toBe(true);
+      await choisir(choixNovembre);
+    } else {
+      expect(screen.queryAllByRole('radio')).toHaveLength(0);
+    }
+    expect(screen.getByText(/Fin novembre : /)).toBeTruthy();
+    await appuyer('Voir le mois suivant');
+    expect(screen.getByText('Décembre : un mois difficile')).toBeTruthy();
+    expect(screen.getByText('Abonnement non réductible ce mois-ci.')).toBeTruthy();
+    await appuyer('Continuer');
+    expect(screen.getByText('Ce que tu emportes')).toBeTruthy();
+    expect(screen.queryByText(/Comment fonctionnent un découvert/)).toBeNull();
+    await appuyer('Terminer');
+    expect(onQuitter).toHaveBeenCalledTimes(1);
+  });
+
+  test('écran 10 : base 1 900 € et répartition en dépenses en plus, leviers d’octobre et portée repliée', async () => {
+    await monter();
+    await jusquAEcran4();
+    await appuyer('Valider ce plan');
+    await appuyer('Garder ce plan');
+    await appuyer('Ne rien changer');
+    await appuyer('Continuer');
+    await appuyer('Continuer');
+    await choisir('0 €');
+    await appuyer('Valider le plan de novembre');
+    await appuyer('Continuer');
+    await choisir('1 900 € : le plus haut de ses quatre derniers revenus');
+    await choisir('Il compte sur un bon mois');
+    const augmenter = async (nom: string, fois: number) => {
+      for (let i = 0; i < fois; i += 1) {
+        await fireEvent(screen.getByRole('adjustable', { name: nom }), 'accessibilityAction', { nativeEvent: { actionName: 'increment' } });
+      }
+    };
+    await augmenter('Dépenses en plus', 50);
+    expect(screen.getByText(/il lui manquerait 166 € ce mois-ci/)).toBeTruthy();
+    expect(screen.getByText('Il manque encore 166 €.')).toBeTruthy();
+    await augmenter('Renoncer aux dépenses en plus', 20);
+    expect(screen.getByText('34 € de plus que nécessaire : ils restent sur son compte.')).toBeTruthy();
+    expect(screen.getByText('Fin octobre : 34 € sur son compte.')).toBeTruthy();
+    expect(screen.getByRole('button', { name: 'Ce changement vaut-il seulement pour ce mois-ci, ou pour son plan habituel ?' })).toBeTruthy();
+  });
+
   test('quitter détruit la session et ne transmet aucune progression supplémentaire', async () => {
     const { onQuitter, progression } = await monter();
     await appuyer('Quitter l’expérience');

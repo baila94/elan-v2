@@ -4,6 +4,13 @@ import { espace, useCouleurs } from './theme';
 
 // Composants de présentation, sans logique métier.
 
+/**
+ * Agrandissement maximal du texte dans les barres de hauteur fixe (en-têtes, onglets, barre du lecteur).
+ * Au-delà, le bouton Aide et les icônes d'onglets étaient coupés ou sortaient de l'écran.
+ * Le contenu des écrans, lui, suit la taille de texte choisie sans limite.
+ */
+export const TAILLE_MAX_BARRES = 1.35;
+
 export function Titre({ children }: { children: ReactNode }) {
   const c = useCouleurs();
   return (

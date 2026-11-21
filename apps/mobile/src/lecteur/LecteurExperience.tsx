@@ -1,6 +1,6 @@
 import { ComponentRef, ReactNode, useMemo, useReducer, useRef, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Bouton, Confirmation, Titre } from '../ui/composants';
+import { Bouton, Confirmation, TAILLE_MAX_BARRES, Titre } from '../ui/composants';
 import { espace, useCouleurs } from '../ui/theme';
 import { remplir, verifie } from './gabarits';
 import { PortProgression } from './progression-port';
@@ -130,9 +130,13 @@ export function LecteurExperience<E>({
           onPress={() => setQuitter(true)}
           style={styles.boutonBarre}
         >
-          <Text style={{ color: c.accent, fontSize: 16 }}>Quitter</Text>
+          <Text maxFontSizeMultiplier={TAILLE_MAX_BARRES} style={{ color: c.accent, fontSize: 16 }}>
+            Quitter
+          </Text>
         </Pressable>
-        <Text style={[styles.position, { color: c.texteSecondaire }]} accessibilityLabel={`Écran ${ecran.numero} sur ${definition.ecrans.length}`}>
+        <Text
+          maxFontSizeMultiplier={TAILLE_MAX_BARRES}
+          style={[styles.position, { color: c.texteSecondaire }]} accessibilityLabel={`Écran ${ecran.numero} sur ${definition.ecrans.length}`}>
           {lecteur.rejeu ? 'Et si… ?' : `${ecran.numero} / ${definition.ecrans.length}`}
         </Text>
         <View style={styles.boutonBarre}>{enTete}</View>

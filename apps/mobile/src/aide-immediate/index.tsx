@@ -1,5 +1,5 @@
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { Bandeau, Bouton, Carte, Paragraphe, Titre } from '../ui/composants';
+import { Bandeau, Bouton, Carte, Paragraphe, TAILLE_MAX_BARRES, Titre } from '../ui/composants';
 import { espace, useCouleurs } from '../ui/theme';
 import paquet from './paquet-demo.json';
 
@@ -34,7 +34,9 @@ export function BoutonAide({ onPress }: { onPress: () => void }) {
       style={[styles.bouton, { backgroundColor: c.aideFond }]}
       hitSlop={8}
     >
-      <Text style={[styles.texteBouton, { color: c.aideTexte }]}>Aide</Text>
+      <Text maxFontSizeMultiplier={TAILLE_MAX_BARRES} style={[styles.texteBouton, { color: c.aideTexte }]}>
+        Aide
+      </Text>
     </Pressable>
   );
 }

@@ -1,0 +1,37 @@
+# Règles communes à tout le dépôt.
+# Les règles propres à l'application mobile sont dans apps/mobile/.gitignore.
+
+# Secrets et fichiers d'environnement
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+id_rsa*
+id_ed25519*
+.npmrc
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Fichiers temporaires et de sauvegarde
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+*.log
+
+# Dépendances, où qu'elles soient
+node_modules/
